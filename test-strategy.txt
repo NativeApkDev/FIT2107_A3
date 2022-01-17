@@ -1,0 +1,29 @@
+The test cases are selected by using black-box testing strategies. Then, to validate the quality of the chosen test cases from the point of view of the coverage, white-box testing strategy is implemented.
+
+We used category partitioning to come out with the test cases, and the category is as following:
+- Satlist_url { url string, a random string, non-string }
+- Start_time { datetime object, non-datetime object }
+- N_windows { integer, non-integer }
+- Duration { integer, non-integer }
+- Sample_interval { integer, non-integer }
+- Cumulative { True, False, invalid }
+- Location { valid, invalid }
+
+Jenny was also used to help us create the test frames with the command of "jenny -n2 3 2 2 2 2 3 2".
+Which results in 10 test cases:
+1.	1a 2b 3b 4a 5b 6b 7b
+2.	1b 2a 3a 4b 5a 6c 7a
+3.	1c 2a 3a 4a 5a 6a 7b
+4.	1b 2b 3b 4b 5b 6a 7a
+5.	1a 2a 3b 4b 5a 6b 7a
+6.	1c 2b 3b 4a 5b 6c 7a
+7.	1a 2b 3a 4b 5a 6c 7b
+8.	1b 2a 3a 4a 5b 6b 7b
+9.	1c 2a 3a 4b 5a 6b 7b
+10.	1a 2b 3b 4b 5b 6a 7a
+
+To finalize the test frames, we used ad-hoc method to decide the inputs for each test frames. The tester is free to choose what inputs to use.
+
+After implementing the test cases, we checked with a drawn CFG for untouched code lines and devised additional test cases to achieve 100% coverage.
+
+Using coverage.py from "https://coverage.readthedocs.io/en/v4.5.x/install.html", the branch and statement coverages (in %) are measured. From measuring, we are able to achieve 100% in scheduler.py and 98% in schedulerTest.py.
